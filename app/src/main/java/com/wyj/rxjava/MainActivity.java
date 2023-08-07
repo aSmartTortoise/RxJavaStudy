@@ -2,6 +2,7 @@ package com.wyj.rxjava;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,8 +17,8 @@ import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- *  参考文章
- *  https://blog.yorek.xyz/android/other/RxJava/#21
+ * 参考文章
+ * https://blog.yorek.xyz/android/other/RxJava/#21
  */
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
@@ -49,19 +50,25 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         });
+        findViewById(R.id.btn_input_search).setOnClickListener(
+                view -> {
+                    Intent intent = new Intent(MainActivity.this, CheeseActivity.class);
+                    MainActivity.this.startActivity(intent);
+                }
+        );
     }
 
     private void threadSwitch() {
         Log.d(TAG, "threadSwitch: thread:" + Thread.currentThread().getName());
         Observable.create(new ObservableOnSubscribe<String>() {
-            @Override
-            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                Log.d(TAG, "subscribe: thread:" + Thread.currentThread().getName());
-                emitter.onNext("1");
-                emitter.onNext("2");
-                emitter.onComplete();
-            }
-        })
+                    @Override
+                    public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                        Log.d(TAG, "subscribe: thread:" + Thread.currentThread().getName());
+                        emitter.onNext("1");
+                        emitter.onNext("2");
+                        emitter.onComplete();
+                    }
+                })
                 .observeOn(Schedulers.newThread())
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -90,14 +97,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void rxJavaSubscribe() {
         Observable.create(new ObservableOnSubscribe<String>() {
-            @Override
-            public void subscribe(ObservableEmitter<String> emitter) throws Exception {
-                emitter.onNext("1");
-                emitter.onNext("2");
-                emitter.onNext("3");
-                emitter.onComplete();
-            }
-        })
+                    @Override
+                    public void subscribe(ObservableEmitter<String> emitter) throws Exception {
+                        emitter.onNext("1");
+                        emitter.onNext("2");
+                        emitter.onNext("3");
+                        emitter.onComplete();
+                    }
+                })
                 .map(new Function<String, Integer>() {
                     @Override
                     public Integer apply(String s) throws Exception {

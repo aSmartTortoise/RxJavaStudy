@@ -7,6 +7,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.wyj.rxjava.practise.LoginActivity;
+import com.wyj.rxjava.practise.PractiseActivity;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -56,6 +59,15 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.startActivity(intent);
                 }
         );
+        findViewById(R.id.btn_practise).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, PractiseActivity.class);
+            MainActivity.this.startActivity(intent);
+        });
+        findViewById(R.id.btn_network).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     private void threadSwitch() {

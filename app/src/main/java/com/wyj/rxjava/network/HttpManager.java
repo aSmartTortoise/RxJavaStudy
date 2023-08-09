@@ -4,6 +4,8 @@ import android.util.Log;
 
 import com.wyj.rxjava.BuildConfig;
 import com.wyj.rxjava.MyApplication;
+import com.wyj.rxjava.network.interceptor.CookieInterceptor;
+import com.wyj.rxjava.network.interceptor.HeaderInterceptor;
 
 import java.io.File;
 
@@ -54,6 +56,7 @@ public class HttpManager {
         return new OkHttpClient.Builder()
                 .addInterceptor(new HeaderInterceptor())
                 .addInterceptor(loggingInterceptor)
+                .addInterceptor(new CookieInterceptor())
                 .cache(cache)
                 .build();
     }

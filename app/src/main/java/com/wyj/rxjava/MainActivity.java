@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
+import com.wyj.rxjava.practise.Login2Activity;
 import com.wyj.rxjava.practise.LoginActivity;
 import com.wyj.rxjava.practise.PractiseActivity;
 
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
         });
         findViewById(R.id.btn_network).setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+            startActivity(intent);
+        });
+        findViewById(R.id.btn_login2).setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, Login2Activity.class);
             startActivity(intent);
         });
 

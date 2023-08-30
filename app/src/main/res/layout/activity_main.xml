@@ -60,4 +60,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_practise" />
 
+    <Button
+        android:id="@+id/btn_login2"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="mvvm实践"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_network" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

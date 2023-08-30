@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -15,9 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RxJavaStudy"
         tools:targetApi="31">
-        <activity
-            android:name=".practise.PractiseActivity"/>
-
+        <activity android:name=".practise.Login2Activity" />
+        <activity android:name=".practise.PractiseActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -32,7 +32,7 @@
                 android:value="" />
         </activity>
         <activity android:name=".CheeseActivity" />
-        <activity android:name=".practise.LoginActivity"/>
+        <activity android:name=".practise.LoginActivity" />
     </application>
 
 </manifest>

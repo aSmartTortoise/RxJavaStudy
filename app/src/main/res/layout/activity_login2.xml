@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <variable
+            name="viewModel"
+            type="com.wyj.rxjava.mvvm.login.LoginViewModel" />
 
     </data>
 
@@ -26,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_24"
             android:layout_marginTop="@dimen/dp_20"
-            android:text="@string/login_know_more_android"
+            android:text="@={viewModel.titleData}"
             android:textColor="@color/color_222427"
             android:textSize="@dimen/text_size_18"
             app:layout_constraintStart_toStartOf="parent"

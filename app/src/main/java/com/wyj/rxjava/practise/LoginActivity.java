@@ -13,7 +13,9 @@ import com.wyj.rxjava.mvp.login.LoginPresenterImpl;
 import com.wyj.rxjava.mvp.login.LoginContract;
 
 /**
- *  https://www.jianshu.com/p/83f679efa15a
+ *  https://www.jianshu.com/p/83f679efa15a android：Retrofit+RxJava的优雅封装
+ *  https://juejin.cn/post/6901200799242649607 正确认识 MVC/MVP/MVVM
+ *
  */
 public class LoginActivity extends AppCompatActivity implements LoginContract.View {
     private static final String TAG = "LoginActivity";

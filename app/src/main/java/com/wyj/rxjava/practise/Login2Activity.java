@@ -88,7 +88,6 @@ public class Login2Activity extends AppCompatActivity {
                         }
                     };
                     etPhone.addTextChangedListener(textWatcher);
-
                     emitter.setCancellable(() -> etPhone.removeTextChangedListener(textWatcher));
                 })
                 .filter(charSequence -> !TextUtils.isEmpty(charSequence))
@@ -115,7 +114,7 @@ public class Login2Activity extends AppCompatActivity {
                     tvLogin.setOnClickListener(clickListener);
                     emitter.setCancellable(() -> tvLogin.setOnClickListener(null));
                 })
-                .throttleWithTimeout(300, TimeUnit.MILLISECONDS)
+                .throttleFirst(300, TimeUnit.MILLISECONDS)
                 .subscribe(o -> {
                     toLogin();
                 });

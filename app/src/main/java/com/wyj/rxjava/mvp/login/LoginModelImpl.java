@@ -19,6 +19,7 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 
+
 public class LoginModelImpl implements LoginContract.Model {
     private static final String TAG = "LoginModelImpl";
     @Override
